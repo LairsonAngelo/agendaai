@@ -33,6 +33,15 @@ class Employee extends Model implements HasMedia
         'deleted_at',
     ];
 
+    public static function boot(){
+        parent::boot();
+
+        static::deleting(function($employee) {
+             $employee->appointments()->delete();
+     
+        });
+    }
+
     public function registerMediaConversions(Media $media = null)
     {
         $this->addMediaConversion('thumb')->width(50)->height(50);

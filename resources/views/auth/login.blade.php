@@ -1,5 +1,12 @@
 @extends('layouts.app')
 @section('content')
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<style>
+  h1{
+    font-family: 'Lobster', cursive;
+    color: red;
+  }
+</style>
 <div class="row justify-content-center">
     <div class="col-md-8">
         <div class="card-group">
@@ -12,7 +19,7 @@
                     @endif
                     <form method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
-                        <h1>{{ trans('panel.site_title') }}</h1>
+                        <center><h1>Agenda.ai</h1></center>
                         <p class="text-muted">{{ trans('global.login') }}</p>
 
                         <div class="input-group mb-3">

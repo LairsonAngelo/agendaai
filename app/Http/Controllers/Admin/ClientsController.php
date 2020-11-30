@@ -98,6 +98,8 @@ class ClientsController extends Controller
     {
         abort_if(Gate::denies('client_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
+        
+
         $client->delete();
 
         return back();
